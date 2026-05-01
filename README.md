@@ -12,11 +12,11 @@ L’analyse se fait à deux niveaux :
 
 Afin de vérifier le bon fonctionnement de l’environnement, plusieurs commandes ont été exécutées.
 
-frida --version permet de vérifier que Frida est correctement installé.
+- frida --version permet de vérifier que Frida est correctement installé.
 
-python -c "import frida; print(frida.__version__)" confirme que le module Python Frida est fonctionnel.
+- python -c "import frida; print(frida.__version__)" confirme que le module Python Frida est fonctionnel.
 
-adb devices permet de vérifier que l’appareil Android est bien connecté.
+- adb devices permet de vérifier que l’appareil Android est bien connecté.
 
 <img width="945" height="199" alt="image" src="https://github.com/user-attachments/assets/81fe88b1-6ef7-4b6e-86e2-72391002a5bc" />
 
@@ -117,7 +117,3 @@ ces techniques peuvent être implémentées en Java ou en natif
 Frida permet d’intercepter et de modifier dynamiquement le comportement de l’application
 le contournement des mécanismes de sécurité est possible sans modifier l’APK
 
-Le bypass Java a permis de contourner les vérifications principales, tandis que le bypass natif renforce la protection en bloquant les appels système bas niveau.
-adb shell
-su
-/data/local/tmp/frida-server -l 0.0.0.0
