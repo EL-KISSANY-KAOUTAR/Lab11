@@ -1,6 +1,6 @@
 # LAB 11 : Bypass de la Détection de Root Android avec Frida (Hooks Java & Natif)
 
-Objectif du lab
+# Objectif du lab
 
 Ce lab a pour objectif de comprendre comment les applications Android détectent le root et comment contourner ces mécanismes en utilisant Frida. L’analyse se fait à deux niveaux : Java et natif (C/C++).
 
@@ -87,6 +87,11 @@ Modification principale :
 utilisation de getExport() pour compatibilité avec Frida 17
 
 ajout d’un test pour valider les hooks
+
+Voicii le script :
+<img width="668" height="427" alt="image" src="https://github.com/user-attachments/assets/18cce2e5-adbc-4e39-b346-4b8f81255c36" />
+<img width="769" height="407" alt="image" src="https://github.com/user-attachments/assets/0b451727-49ce-4fc6-8d86-d08e688d8929" />
+<img width="683" height="281" alt="image" src="https://github.com/user-attachments/assets/7df86bf3-ec76-4b15-a5ef-d3f6a4ffdd23" />
 <img width="608" height="335" alt="image" src="https://github.com/user-attachments/assets/85015a4a-b091-4064-8e92-a0bb35b2aee2" />
 
 
@@ -96,7 +101,7 @@ ajout d’un test pour valider les hooks
 
 L’application s’exécute normalement, ce qui prouve que le bypass Java fonctionne.
 
-Conclusion
+# Conclusion
 
 Ce lab a permis de démontrer que :
 
