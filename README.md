@@ -77,28 +77,8 @@ Modification principale :
 
 utilisation de getExport() pour compatibilité avec Frida 17
 ajout d’un test pour valider les hooks
-Voici la partie ajoutée
-•	// Test pour afficher un log Blocked
-•	setTimeout(function () {
-•	  console.log('[*] Native self-test started');
-•	
-•	  try {
-•	    const accessPtr = getExport('access');
-•	
-•	    if (!accessPtr) {
-•	      console.log('[-] access export not found');
-•	      return;
-•	    }
-•	
-•	    const access = new NativeFunction(accessPtr, 'int', ['pointer', 'int']);
-•	    const path = Memory.allocUtf8String('/system/bin/su');
-•	
-•	    access(path, 0);
-•	
-•	  } catch (e) {
-•	    console.log('[-] self-test failed:', e);
-•	  }
-•	}, 1000);
+<img width="608" height="335" alt="image" src="https://github.com/user-attachments/assets/85015a4a-b091-4064-8e92-a0bb35b2aee2" />
+
 
 ✔️ Résultat
 
@@ -106,3 +86,13 @@ Voici la partie ajoutée
 
 L’application s’exécute normalement, ce qui prouve que le bypass Java fonctionne.
 
+Conclusion
+
+Ce lab a permis de démontrer que :
+
+les applications Android utilisent plusieurs techniques pour détecter le root
+ces techniques peuvent être implémentées en Java ou en natif
+Frida permet d’intercepter et de modifier dynamiquement le comportement de l’application
+le contournement des mécanismes de sécurité est possible sans modifier l’APK
+
+Le bypass Java a permis de contourner les vérifications principales, tandis que le bypass natif renforce la protection en bloquant les appels système bas niveau.
