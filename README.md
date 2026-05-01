@@ -87,11 +87,11 @@ Ces fonctions sont utilisées pour vérifier l’existence de fichiers liés au 
 
 Le script bypass_native.js a été utilisé pour intercepter ces fonctions.
 
-✔️ Améliorations apportées :
+Améliorations apportées sur le script  :
 
-Adaptation pour Frida 17
-Utilisation d’une méthode compatible pour récupérer les fonctions natives
-Ajout d’un test pour valider les hooks
+- Adaptation pour Frida 17
+- Utilisation d’une méthode compatible pour récupérer les fonctions natives
+- Ajout d’un test pour valider les hooks
 
 Voicii le script :
 <img width="668" height="427" alt="image" src="https://github.com/user-attachments/assets/18cce2e5-adbc-4e39-b346-4b8f81255c36" />
@@ -106,11 +106,11 @@ Voicii le script :
 
 ✔️ Interprétation
 
-   ✔️ Les fonctions natives sont interceptées
+   - Les fonctions natives sont interceptées
    
-   ✔️ Les accès aux fichiers root sont bloqués
+   - Les accès aux fichiers root sont bloqués
    
-   ✔️ Logs [+] Blocked ... confirmés
+   - Logs [+] Blocked ... confirmés
 
 # Conclusion
 
