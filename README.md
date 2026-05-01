@@ -26,17 +26,17 @@ Ces commandes montrent que l’environnement est prêt pour l’analyse dynamiqu
 
 Le service frida-server a été lancé sur l’appareil Android avec les privilèges root :
 
-adb shell
+- adb shell
 
-su
+- su
 
-/data/local/tmp/frida-server -l 0.0.0.0
+- /data/local/tmp/frida-server -l 0.0.0.0
 
 <img width="945" height="94" alt="image" src="https://github.com/user-attachments/assets/0a7a75c3-0c2b-4c0b-a989-34a2c7ced26b" />
 
 Ensuite, la commande suivante a été utilisée pour lister les applications :
 
-frida-ps -Uai
+- frida-ps -Uai
 
 <img width="945" height="570" alt="image" src="https://github.com/user-attachments/assets/cff21ee6-5c94-44e8-b6e6-37bd058857ce" />
 
@@ -53,9 +53,10 @@ Le script intercepte plusieurs fonctions sensibles :
 Build.TAGS → forcé à release-keys
 File.exists → masque les fichiers su
 Runtime.exec → bloque les commandes liées au root
+
 Après injection du script avec Frida :
 
-frida -U -f owasp.mstg.uncrackable1 -l bypass_root.js
+- frida -U -f owasp.mstg.uncrackable1 -l bypass_root.js
 
 Les logs suivants ont été observés :
 
@@ -74,15 +75,15 @@ frida-trace -U -f owasp.mstg.uncrackable1 -i open -i access -i stat
 
 Les fonctions suivantes ont été identifiées :
 
-open
+- open
 
-access
+- access
 
-stat
+- stat
 
 Ces fonctions sont utilisées pour vérifier l’existence de fichiers liés au root.
 
-Adaptation du script natif
+* Adaptation du script natif
 
 Le script bypass_native.js a été utilisé pour intercepter ces fonctions.
 
