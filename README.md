@@ -1,6 +1,7 @@
 # LAB 11 : Bypass de la Détection de Root Android avec Frida (Hooks Java & Natif)
 
 Objectif du lab
+
 Ce lab a pour objectif de comprendre comment les applications Android détectent le root et comment contourner ces mécanismes en utilisant Frida. L’analyse se fait à deux niveaux : Java et natif (C/C++).
 
 1. Installation et preuve (20 pts)
@@ -8,7 +9,9 @@ Ce lab a pour objectif de comprendre comment les applications Android détectent
 Afin de vérifier le bon fonctionnement de l’environnement, plusieurs commandes ont été exécutées.
 
 frida --version permet de vérifier que Frida est correctement installé.
+
 python -c "import frida; print(frida.__version__)" confirme que le module Python Frida est fonctionnel.
+
 adb devices permet de vérifier que l’appareil Android est bien connecté.
 
 <img width="945" height="199" alt="image" src="https://github.com/user-attachments/assets/81fe88b1-6ef7-4b6e-86e2-72391002a5bc" />
@@ -20,7 +23,9 @@ Ces commandes montrent que l’environnement est prêt pour l’analyse dynamiqu
 Le service frida-server a été lancé sur l’appareil Android avec les privilèges root :
 
 adb shell
+
 su
+
 /data/local/tmp/frida-server -l 0.0.0.0
 
 <img width="945" height="94" alt="image" src="https://github.com/user-attachments/assets/0a7a75c3-0c2b-4c0b-a989-34a2c7ced26b" />
@@ -58,13 +63,17 @@ Ces messages confirment que les vérifications de root ont été interceptées a
 Dans cette étape, nous avons analysé les appels natifs utilisés par l’application.
 
 ✔️ Identification avec frida-trace
+
 frida-trace -U -f owasp.mstg.uncrackable1 -i open -i access -i stat
+
 <img width="945" height="463" alt="image" src="https://github.com/user-attachments/assets/b8b4609e-50c1-492a-b7fe-57ed9eb9365e" />
 
 Les fonctions suivantes ont été identifiées :
 
 open
+
 access
+
 stat
 
 Ces fonctions sont utilisées pour vérifier l’existence de fichiers liés au root.
@@ -76,6 +85,7 @@ Le script bypass_native.js a été utilisé pour intercepter ces appels.
 Modification principale :
 
 utilisation de getExport() pour compatibilité avec Frida 17
+
 ajout d’un test pour valider les hooks
 <img width="608" height="335" alt="image" src="https://github.com/user-attachments/assets/85015a4a-b091-4064-8e92-a0bb35b2aee2" />
 
