@@ -1,8 +1,12 @@
 # LAB 11 : Bypass de la Détection de Root Android avec Frida (Hooks Java & Natif)
 
-# Objectif du lab
+🎯 Objectif du lab
 
-Ce lab a pour objectif de comprendre comment les applications Android détectent le root et comment contourner ces mécanismes en utilisant Frida. L’analyse se fait à deux niveaux : Java et natif (C/C++).
+Ce lab a pour objectif de comprendre comment les applications Android détectent le root et comment contourner ces mécanismes en utilisant Frida.
+L’analyse se fait à deux niveaux :
+
+🟢 Java
+🔴 Natif (C/C++)
 
 1. Installation et preuve (20 pts)
 
@@ -78,15 +82,15 @@ stat
 
 Ces fonctions sont utilisées pour vérifier l’existence de fichiers liés au root.
 
-✔️ Adaptation du script natif
+Adaptation du script natif
 
-Le script bypass_native.js a été utilisé pour intercepter ces appels.
+Le script bypass_native.js a été utilisé pour intercepter ces fonctions.
 
-Modification principale :
+✔️ Améliorations apportées :
 
-utilisation de getExport() pour compatibilité avec Frida 17
-
-ajout d’un test pour valider les hooks
+Adaptation pour Frida 17
+Utilisation d’une méthode compatible pour récupérer les fonctions natives
+Ajout d’un test pour valider les hooks
 
 Voicii le script :
 <img width="668" height="427" alt="image" src="https://github.com/user-attachments/assets/18cce2e5-adbc-4e39-b346-4b8f81255c36" />
@@ -99,7 +103,10 @@ Voicii le script :
 
 <img width="945" height="415" alt="image" src="https://github.com/user-attachments/assets/f9c06976-eac4-46da-8866-9c3f67ba8e64" />
 
-L’application s’exécute normalement, ce qui prouve que le bypass Java fonctionne.
+✔️ Interprétation
+   ✔️ Les fonctions natives sont interceptées
+   ✔️ Les accès aux fichiers root sont bloqués
+   ✔️ Logs [+] Blocked ... confirmés
 
 # Conclusion
 
@@ -111,3 +118,6 @@ Frida permet d’intercepter et de modifier dynamiquement le comportement de l�
 le contournement des mécanismes de sécurité est possible sans modifier l’APK
 
 Le bypass Java a permis de contourner les vérifications principales, tandis que le bypass natif renforce la protection en bloquant les appels système bas niveau.
+adb shell
+su
+/data/local/tmp/frida-server -l 0.0.0.0
