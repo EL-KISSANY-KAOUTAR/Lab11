@@ -83,7 +83,7 @@ Les fonctions suivantes ont été identifiées :
 
 Ces fonctions sont utilisées pour vérifier l’existence de fichiers liés au root.
 
-* Adaptation du script natif
+✔️ Adaptation du script natif
 
 Le script bypass_native.js a été utilisé pour intercepter ces fonctions.
 
@@ -105,8 +105,11 @@ Voicii le script :
 <img width="945" height="415" alt="image" src="https://github.com/user-attachments/assets/f9c06976-eac4-46da-8866-9c3f67ba8e64" />
 
 ✔️ Interprétation
+
    ✔️ Les fonctions natives sont interceptées
+   
    ✔️ Les accès aux fichiers root sont bloqués
+   
    ✔️ Logs [+] Blocked ... confirmés
 
 # Conclusion
