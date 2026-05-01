@@ -116,8 +116,8 @@ Voicii le script :
 
 Ce lab a permis de démontrer que :
 
-les applications Android utilisent plusieurs techniques pour détecter le root
-ces techniques peuvent être implémentées en Java ou en natif
-Frida permet d’intercepter et de modifier dynamiquement le comportement de l’application
-le contournement des mécanismes de sécurité est possible sans modifier l’APK
+- les applications Android utilisent plusieurs techniques pour détecter le root
+- ces techniques peuvent être implémentées en Java ou en natif
+- Frida permet d’intercepter et de modifier dynamiquement le comportement de l’application
+- le contournement des mécanismes de sécurité est possible sans modifier l’APK
 
